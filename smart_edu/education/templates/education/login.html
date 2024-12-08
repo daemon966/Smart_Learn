@@ -1,0 +1,186 @@
+{% block content %}
+<div class="container">
+    <div class="login-box">
+        <h1 class="title">Login</h1>
+
+        <!-- Display error messages -->
+        {% if messages %}
+        <div class="alert alert-danger">
+            {% for message in messages %}
+                <p>{{ message }}</p>
+            {% endfor %}
+        </div>
+        {% endif %}
+
+        <form method="POST" class="login-form">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="username">Username:</label>
+                <input type="text" name="username" id="username" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" name="password" id="password" required>
+            </div>
+            <button type="submit" class="login-button">Login</button>
+        </form>
+
+        <!-- Register Button -->
+        <div class="register-section">
+            <p>Don't have an account? <a href="{% url 'register' %}" class="register-link">Register</a></p>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_css %}
+<style>
+    /* Global Styling for the Login Page */
+    body {
+        background: linear-gradient(135deg, #4a90e2, #9013fe);
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: 'Roboto', sans-serif;
+        margin: 0;
+    }
+
+    .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+    }
+
+    .login-box {
+        background-color: white;
+        padding: 3rem;
+        border-radius: 12px;
+        box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+        width: 100%;
+        max-width: 400px;
+        text-align: center;
+        animation: fadeInUp 0.8s ease-out;
+    }
+
+    .title {
+        font-size: 2rem;
+        font-weight: bold;
+        color: #333;
+        margin-bottom: 1.5rem;
+        animation: slideIn 0.6s ease-in-out;
+    }
+
+    .form-group {
+        margin-bottom: 1.5rem;
+        text-align: left;
+    }
+
+    .form-group label {
+        font-size: 1.1rem;
+        color: #333;
+        margin-bottom: 0.5rem;
+        display: block;
+    }
+
+    .form-group input {
+        width: 100%;
+        padding: 10px;
+        font-size: 1rem;
+        border: 2px solid #ccc;
+        border-radius: 8px;
+        outline: none;
+        transition: all 0.3s ease;
+    }
+
+    .form-group input:focus {
+        border-color: #4a90e2;
+        box-shadow: 0px 0px 5px rgba(74, 144, 226, 0.5);
+    }
+
+    .login-button {
+        width: 100%;
+        padding: 12px;
+        background-color: #4a90e2;
+        border: none;
+        border-radius: 8px;
+        color: white;
+        font-size: 1.1rem;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        font-weight: bold;
+    }
+
+    .login-button:hover {
+        background-color: #357ab7;
+    }
+
+    /* Register Link */
+    .register-section {
+        margin-top: 1rem;
+        font-size: 1rem;
+    }
+
+    .register-link {
+        color: #4a90e2;
+        font-weight: bold;
+        text-decoration: none;
+    }
+
+    .register-link:hover {
+        text-decoration: underline;
+    }
+
+    /* Animations */
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @keyframes slideIn {
+        from {
+            opacity: 0;
+            transform: translateX(-30px);
+        }
+        to {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+
+    /* Alert Message Style */
+    .alert-danger {
+        background-color: #f8d7da;
+        border-color: #f5c6cb;
+        color: #721c24;
+        padding: 1rem;
+        margin-bottom: 1rem;
+        border-radius: 8px;
+        text-align: center;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 480px) {
+        .login-box {
+            padding: 2rem;
+            width: 90%;
+        }
+
+        .title {
+            font-size: 1.6rem;
+        }
+
+        .form-group input,
+        .login-button {
+            font-size: 1rem;
+        }
+    }
+</style>
+{% endblock %}

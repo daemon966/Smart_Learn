@@ -1,0 +1,479 @@
+{% load static %}
+
+{% block content %}
+<!-- Navbar -->
+<!-- <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">Smart Education</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link active" href="#home">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#about">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#contact">Contact</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#signup-login">Sign Up / Log In</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav> -->
+
+<!-- Landing Page -->
+<section class="hero" id="home">
+    <div class="hero-content">
+        <h1 class="hero-title">Smart Education System</h1>
+        <p class="hero-description">
+            Empowering every child, especially the underprivileged, with personalized education and tools for a brighter future.
+        </p>
+        <div class="cta-buttons">
+            <a href="{% url 'register' %}" class="cta-button register-button">Get Started</a>
+            <a href="{% url 'login' %}" class="cta-button login-button">Log In</a>
+            
+        </div>
+    </div>
+</section>
+
+<!-- Image Carousel Section -->
+<section class="carousel">
+    <div class="horizontal-carousel">
+        <div class="carousel-item">
+            <img src="{% static 'images/education5.jpg' %}" alt="Image 1" onerror="this.onerror=null;this.src='{% static ';images/placeholder.jpg;' %}'">
+        </div>
+        <div class="carousel-item">
+            <img src="{% static 'images/education4.webp' %}" alt="Image 2" onerror="this.onerror=null;this.src='{% static ';images/placeholder.jpg;' %}'">
+        </div>
+        <div class="carousel-item">
+            <img src="{% static 'images/education3.jpg' %}" alt="Image 3" onerror="this.onerror=null;this.src='{% static ';images/placeholder.jpg;' %}'">
+        </div>
+        <div class="carousel-item">
+            <img src="{% static 'images/education6.webp' %}" alt="Image 4" onerror="this.onerror=null;this.src='{% static ';images/placeholder.jpg;' %}'">
+        </div>
+        <div class="carousel-item">
+            <img src="{% static 'images/education2.jpg' %}" alt="Image 5" onerror="this.onerror=null;this.src='{% static ';images/placeholder.jpg;' %}'">
+        </div>
+        <div class="carousel-item">
+            <img src="{% static 'images/education6.webp' %}" alt="Image 6" onerror="this.onerror=null;this.src='{% static ';images/placeholder.jpg;' %}'">
+        </div>
+    </div>
+</section>
+
+
+<!-- About Section -->
+<section id="about" class="about">
+    <div class="container">
+        <h2 class="about-title">Our Mission</h2>
+        <p class="about-text">
+            The Smart Education System aims to provide underprivileged children with personalized learning experiences, bridging the education gap with tailored programs that meet individual learning needs.
+        </p>
+        <img src="{% static 'images/about.jpg' %}" alt="Education Image" class="about-image">
+    </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact" class="contact">
+    <div class="container">
+        <h2 class="contact-title">Contact Us</h2>
+        <p class="contact-text">
+            Have questions or want to learn more? Reach out to us, and we’ll be happy to assist you in making a difference in the education world.
+        </p>
+        <form class="contact-form">
+            <input type="text" class="form-control" placeholder="Your Name" required>
+            <input type="email" class="form-control" placeholder="Your Email" required>
+            <input type="text" class="form-control" placeholder="Your Message" required>
+            <button type="submit" class="cta-button">Send Message</button>
+        </form>
+    </div>
+</section>
+
+<!-- Sign Up and Log In Cards Section -->
+
+<!-- Footer Section -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <h2>Smart-Education</h2>
+                <p>Empowering students for a brighter future.</p>
+            </div>
+            <div class="footer-links" style="margin-right: 60px;">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#home">Sign Up / Log In</a></li>
+                </ul>
+            </div>
+        
+            <div class="footer-social">
+                <h4>Follow Us</h4>
+                <div class="footer-social1">
+                   <a href="#"><img src="{% static 'images/fb.jpg' %}" alt="Facebook"></a></li>
+                    <a href="#"><img src="{% static 'images/insta.jpg' %}" alt="Instagram"></a></li>
+                    <a href="#"><img src="{% static 'images/link.jpg' %}" alt="LinkedIn"></a></li>
+                </div>
+            </div>
+            
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Smart Education. All Rights Reserved.</p>
+        </div>
+    </div>
+</footer>
+
+{% endblock %}
+
+{% block extra_css %}
+<style>
+    /* Global Styling */
+    body {
+        font-family: 'Arial', sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f6f9;
+        color: #333;
+    }
+
+    /* Navbar */
+    .navbar {
+        background-color: #0044cc; /* Blue background */
+        padding: 15px 20px;
+    }
+
+    .navbar .navbar-brand {
+        font-size: 1.8rem;
+        font-weight: bold;
+        color: #fff;
+    }
+/* Carousel Styling */
+.carousel {
+    padding: 30px 0;
+    overflow-x: auto; /* Enable horizontal scrolling */
+    white-space: nowrap; /* Prevent line breaks for carousel items */
+    scroll-behavior: smooth; /* Smooth scrolling */
+}
+
+.horizontal-carousel {
+    display: flex;
+    gap: 20px; /* Space between carousel items */
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0 20px; /* Padding for inner content */
+}
+
+.carousel-item {
+    flex: 0 0 auto; /* Prevent shrinking or growing of items */
+    width: 300px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.carousel-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.carousel-item:hover {
+    transform: scale(1.05); /* Enlarge on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+    .navbar-nav .nav-link {
+        font-size: 1.1rem;
+        font-weight: 500;
+        color: #fff;
+        margin-left: 20px;
+        text-transform: uppercase;
+    }
+
+    .navbar-nav .nav-link:hover {
+        color: #ffcc00;
+    }
+
+    .navbar-nav .nav-link.active {
+        color: #ffcc00;
+    }
+
+    /* Hero Section */
+    .hero {
+        height: 100vh;
+        background-image: url('{% static "images/education3.jpg" %}');
+        background-size: cover;
+        background-position: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        color: white;
+        padding: 0 20px;
+    }
+
+    .hero-content {
+        max-width: 700px;
+    }
+
+    .hero-title {
+        font-size: 3.5rem;
+        font-weight: 700;
+        margin-bottom: 20px;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+    }
+
+    .hero-description {
+        font-size: 1.25rem;
+        margin-bottom: 30px;
+        line-height: 1.6;
+    }
+
+    .cta-buttons {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .cta-button {
+        padding: 14px 35px;
+        text-decoration: none;
+        color: white;
+        font-size: 1.15rem;
+        border-radius: 30px;
+        text-transform: uppercase;
+        font-weight: bold;
+        transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
+    .register-button {
+        background-color: #ffcc00;
+    }
+
+    .login-button {
+        background-color: #9013fe;
+    }
+
+    .cta-button:hover {
+        background-color: #357ab7;
+        transform: translateY(-5px);
+    }
+
+    /* Carousel */
+    .carousel {
+        padding: 30px 0;
+    }
+
+    .carousel-inner img {
+        height: 450px;
+        object-fit: cover;
+        border-radius: 10px;
+    }
+
+    /* About Section */
+    .about {
+        padding: 60px 20px;
+        background-color: #ffffff;
+        text-align: center;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        margin-top: -30px;
+    }
+
+    .about-title {
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+        font-weight: 600;
+        color: #333;
+    }
+
+    .about-text {
+        font-size: 1.2rem;
+        margin-bottom: 30px;
+        line-height: 1.8;
+        color: #555;
+        max-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .about-image {
+        max-width: 100%;
+        border-radius: 8px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Contact Section */
+    .contact {
+        padding: 60px 20px;
+        background-color: #f9f9f9;
+    }
+
+    .contact-title {
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+    .contact-text {
+        text-align: center;
+        font-size: 1.2rem;
+        margin-bottom: 30px;
+    }
+
+    .contact-form {
+        max-width: 600px;
+        margin: 0 auto;
+    }
+
+    .contact-form .form-control {
+        padding: 12px;
+        margin-bottom: 15px;
+        border-radius: 8px;
+        border: 1px solid #ddd;
+    }
+
+    .contact-form button {
+        padding: 12px 20px;
+        font-size: 1.1rem;
+        background-color: #4a90e2;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        width: 100%;
+    }
+
+    .contact-form button:hover {
+        background-color: #357ab7;
+    }
+
+    /* Signup/Login Section */
+    .signup-login {
+        padding: 60px 20px;
+        background-color: #ffffff;
+        text-align: center;
+    }
+
+    .signup-login .row {
+        display: flex;
+        justify-content: center;
+    }
+
+    .signup-login .card {
+        background-color: #f7f9fc;
+        border: none;
+        padding: 30px;
+        border-radius: 12px;
+        margin: 15px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .signup-login .card h3 {
+        font-size: 1.8rem;
+        margin-bottom: 15px;
+    }
+
+    .signup-login .card p {
+        font-size: 1.2rem;
+        margin-bottom: 25px;
+    }
+    /* Footer Styling */
+.footer {
+    background-color: #2c3e50;
+    color: #fff;
+    padding: 40px 20px;
+    text-align: center;
+    font-size: 1rem;
+}
+
+.footer .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+.footer-logo h3{
+    font-size: 2rem;
+    font-weight: 700;
+    color: #ffcc00;
+    margin-bottom: 10px;
+}
+
+.footer-logo p {
+    font-size: 1rem;
+    color: #bbb;
+}
+
+.footer-links h4, .footer-social h4 {
+    font-size: 1.2rem;
+    color: #ffcc00;
+    margin-bottom: 10px;
+}
+
+.footer-links ul, .footer-social ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links li, .footer-social li {
+    margin: 5px 0;
+}
+
+.footer-links a, .footer-social a {
+    color: #bbb;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover, .footer-social a:hover {
+    color: #ffcc00;
+}
+
+.footer-social1 {
+    display: flex; /* Align items horizontally */
+    justify-content: flex-start; /* Align items to the left */
+    align-items: center; /* Vertically align the images */
+}
+
+.footer-social1 img {
+    width: 30px;
+    height: 30px;
+    margin: 0 10px; /* Space between the images */
+    transition: transform 0.3s ease;
+}
+
+
+.footer-social img:hover {
+    transform: scale(1.2);
+}
+
+.footer-bottom {
+    margin-top: 30px;
+    border-top: 1px solid #444;
+    padding-top: 20px;
+    font-size: 0.9rem;
+    color: #bbb;
+}
+
+</style>
+{% endblock %}
