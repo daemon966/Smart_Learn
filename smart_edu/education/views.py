@@ -36,7 +36,7 @@ from dotenv import load_dotenv
 
 # Load environment variables (GROQ API key)
 load_dotenv()
-groq_api_key = "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"
+groq_api_key = ""
 
 # Chatbot View
 @csrf_exempt
