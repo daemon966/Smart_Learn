@@ -49,5 +49,11 @@ channels==4.0.0                # For real-time communication with WebSockets
 # New dependencies:
 streamlit==1.22.0              # For building interactive web apps (including chatbot)
 langchain==0.0.200             # For working with LLMs (Large Language Models) in Python
-langchain-groq==0.1.0         # Groq's integration with LangChain for AI models
+langchain-groq==0.1.0          # Groq's integration with LangChain for AI models
 python-dotenv==1.0.0          # For loading environment variables from .env file
+
+# Additional dependencies for NLP and AI:
+spacy==3.6.1                   # NLP library
+nltk==3.9.1                    # Natural Language Toolkit
+wikipedia-api==0.5.7           # Wikipedia API client
+wikipedia==1.4.0               # Wikipedia Python wrapper
